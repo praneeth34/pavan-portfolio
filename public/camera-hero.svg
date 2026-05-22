@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <!-- Body: near-black with very faint blue tint -->
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#161820"/>
+      <stop offset="50%"  stop-color="#0e0f14"/>
+      <stop offset="100%" stop-color="#080910"/>
+    </linearGradient>
+    <linearGradient id="gripGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#181a22"/>
+      <stop offset="100%" stop-color="#0c0d12"/>
+    </linearGradient>
+    <!-- Lens barrel: near-black -->
+    <radialGradient id="barrelGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#141618"/>
+      <stop offset="70%"  stop-color="#0c0d10"/>
+      <stop offset="100%" stop-color="#080909"/>
+    </radialGradient>
+    <!-- Lens glass: deep space blue -->
+    <radialGradient id="glassGrad" cx="38%" cy="35%" r="55%">
+      <stop offset="0%"   stop-color="#0a1830"/>
+      <stop offset="50%"  stop-color="#050d1e"/>
+      <stop offset="100%" stop-color="#020608"/>
+    </radialGradient>
+    <!-- Lens glass hot-spot reflection -->
+    <radialGradient id="reflectGrad" cx="36%" cy="32%" r="42%">
+      <stop offset="0%"   stop-color="#00e5ff" stop-opacity="0.08"/>
+      <stop offset="60%"  stop-color="#00e5ff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Cyan glow filter for edge highlights -->
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Lens mount: dark with cyan-lit top edge -->
+    <linearGradient id="mountRimGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1e2830"/>
+      <stop offset="20%"  stop-color="#0e1418"/>
+      <stop offset="100%" stop-color="#060809"/>
+    </linearGradient>
+    <!-- Body top edge: subtle cyan rim light -->
+    <linearGradient id="bodyTopEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00e5ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Camera body ──────────────────────────────────── -->
+  <!-- body: y=232 h=336 → vertical center = 400 = viewBox center -->
+  <rect x="60" y="232" width="680" height="336" rx="20" fill="url(#bodyGrad)"/>
+  <!-- Cyan rim light along top edge -->
+  <rect x="60" y="232" width="680" height="10" rx="5" fill="url(#bodyTopEdge)"/>
+  <!-- Very faint cyan stroke outline -->
+  <rect x="60" y="232" width="680" height="336" rx="20" fill="none"
+    stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.18"/>
+
+  <!-- ── Top grip / pentaprism hump ───────────────────── -->
+  <rect x="480" y="176" width="192" height="72" rx="12" fill="url(#gripGrad)"/>
+  <!-- Cyan top rim -->
+  <rect x="480" y="176" width="192" height="4" rx="2"
+    fill="#00e5ff" fill-opacity="0.25"/>
+
+  <!-- ── Shutter button ────────────────────────────────── -->
+  <ellipse cx="546" cy="176" rx="22" ry="10" fill="#101214"/>
+  <ellipse cx="546" cy="173" rx="16" ry="7"  fill="#161820"/>
+  <!-- Cyan accent ring -->
+  <ellipse cx="546" cy="173" rx="16" ry="7" fill="none"
+    stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.4"/>
+  <ellipse cx="546" cy="172" rx="9"  ry="4"  fill="#1e2430"/>
+
+  <!-- ── Mode dial ─────────────────────────────────────── -->
+  <ellipse cx="622" cy="176" rx="28" ry="12" fill="#111318"/>
+  <ellipse cx="622" cy="174" rx="22" ry="9"  fill="#161a20"/>
+  <ellipse cx="622" cy="174" rx="22" ry="9"  fill="none"
+    stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.35"/>
+  <line x1="622" y1="163" x2="622" y2="167" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.5"/>
+  <line x1="610" y1="165" x2="612" y2="168" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.5"/>
+  <line x1="634" y1="165" x2="632" y2="168" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.5"/>
+
+  <!-- ── Hot shoe ──────────────────────────────────────── -->
+  <rect x="536" y="174" width="80" height="4" rx="1" fill="#0a0b0e"/>
+
+  <!-- ── Right grip bump ───────────────────────────────── -->
+  <rect x="680" y="252" width="60" height="296" rx="18" fill="#101214"/>
+  <rect x="680" y="252" width="60" height="296" rx="18" fill="none"
+    stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.12"/>
+
+  <!-- ── Viewfinder window ─────────────────────────────── -->
+  <rect x="490" y="248" width="90" height="58" rx="6" fill="#080a0e"/>
+  <rect x="494" y="252" width="82" height="50" rx="4" fill="#050810"/>
+  <!-- Cyan glow inside viewfinder -->
+  <rect x="498" y="256" width="74" height="42" rx="3" fill="#001830" opacity="0.9"/>
+  <rect x="498" y="256" width="74" height="42" rx="3" fill="none"
+    stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.3"/>
+
+  <!-- ── Body button strip ─────────────────────────────── -->
+  <rect x="460" y="340" width="160" height="20" rx="4" fill="#0c0d12"/>
+  <rect x="468" y="346" width="40" height="8" rx="2" fill="#111418"/>
+  <rect x="515" y="346" width="40" height="8" rx="2" fill="#111418"/>
+  <rect x="562" y="346" width="40" height="8" rx="2" fill="#111418"/>
+  <!-- Tiny cyan LED dots on buttons -->
+  <circle cx="488" cy="350" r="2.5" fill="#00e5ff" fill-opacity="0.7"/>
+  <circle cx="535" cy="350" r="2.5" fill="#00e5ff" fill-opacity="0.45"/>
+  <circle cx="582" cy="350" r="2.5" fill="#00e5ff" fill-opacity="0.2"/>
+
+  <!-- ── Lens mount outer ring (centered at 400,400) ───── -->
+  <circle cx="400" cy="400" r="176" fill="url(#mountRimGrad)"/>
+  <circle cx="400" cy="400" r="176" fill="none"
+    stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Bayonet tabs -->
+  <rect x="390" y="222" width="20" height="8" rx="2" fill="#141820"/>
+  <rect x="390" y="567" width="20" height="8" rx="2" fill="#141820"/>
+
+  <!-- ── Lens focus ring with serrations ───────────────── -->
+  <circle cx="400" cy="400" r="162" fill="#0e0f14"/>
+  <circle cx="400" cy="400" r="162" fill="none"
+    stroke="#00e5ff" stroke-width="10"
+    stroke-dasharray="4 6" stroke-linecap="round" stroke-opacity="0.12"/>
+
+  <!-- ── Lens aperture ring ──────────────────────────── -->
+  <circle cx="400" cy="400" r="148" fill="#0a0b10"/>
+  <circle cx="400" cy="400" r="148" fill="none"
+    stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- ── Lens barrel ──────────────────────────────────── -->
+  <circle cx="400" cy="400" r="136" fill="url(#barrelGrad)"/>
+
+  <!-- ── Lens glass ───────────────────────────────────── -->
+  <circle cx="400" cy="400" r="120" fill="url(#glassGrad)"/>
+
+  <!-- ── Inner lens element rings ─────────────────────── -->
+  <circle cx="400" cy="400" r="88" fill="none"
+    stroke="#00e5ff" stroke-width="1" stroke-opacity="0.2"/>
+  <circle cx="400" cy="400" r="62" fill="none"
+    stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.15"/>
+  <circle cx="400" cy="400" r="38" fill="#030610"/>
+  <circle cx="400" cy="400" r="22" fill="#020408"/>
+
+  <!-- ── Lens glass reflection ────────────────────────── -->
+  <circle cx="400" cy="400" r="120" fill="url(#reflectGrad)"/>
+  <!-- Cyan specular arc highlight -->
+  <path d="M 328 328 A 92 92 0 0 1 444 292"
+    stroke="#00e5ff" stroke-width="1.5"
+    stroke-linecap="round" opacity="0.15" fill="none"/>
+
+  <!-- ── Lens label rings ──────────────────────────────── -->
+  <circle cx="400" cy="400" r="131" fill="none"
+    stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.15"/>
+  <circle cx="400" cy="400" r="124" fill="none"
+    stroke="#00e5ff" stroke-width="0.3" stroke-opacity="0.1"/>
+
+  <!-- ── Strap lugs ────────────────────────────────────── -->
+  <rect x="54"  y="276" width="12" height="48" rx="4" fill="#0e0f14"/>
+  <rect x="56"  y="280" width="8"  height="40" rx="2" fill="#0a0b10"/>
+  <rect x="734" y="276" width="12" height="48" rx="4" fill="#0e0f14"/>
+  <rect x="736" y="280" width="8"  height="40" rx="2" fill="#0a0b10"/>
+
+  <!-- ── Bottom plate ──────────────────────────────────── -->
+  <rect x="60" y="548" width="680" height="10" rx="5" fill="#080910"/>
+  <!-- Cyan bottom rim -->
+  <rect x="60" y="548" width="680" height="3" rx="1.5"
+    fill="#00e5ff" fill-opacity="0.1"/>
+</svg>
